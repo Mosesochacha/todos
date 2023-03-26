@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -48,6 +49,11 @@ export default function Login() {
         {error && <p>{message}</p>}
         <br />
         <button>LOGIN</button>
+        <p>Not member?
+          <NavLink to="/register">
+            register
+          </NavLink>
+        </p>
       </form>
     </div>
   );
