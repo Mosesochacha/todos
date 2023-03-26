@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-export default function AddTod(userId) {
-  // title, :description, :status, :priority
+import { Redirect } from "react-router-dom";
 
+export default function AddTod(userId) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
   const [priority, setPriority] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,8 +27,8 @@ export default function AddTod(userId) {
     const data = await response.json();
     if (data.message) {
       setMessage(data.message);
-      history.push("/home");
       setError("");
+      return <Redirect to="/home" />;
     } else {
       setMessage("");
       setError(data.error);
