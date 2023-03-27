@@ -17,12 +17,16 @@ class UsersController < ApplicationController
         user = User.where(sql, { username: user_params[:username], email: user_params[:email] }).first
         if user&.authenticate(user_params[:password])
             save_user(user.id)
+            token = encode(user.id , user.email)
             app_response(message: 'Login was successful', status: :ok, data: user)
         else
             app_response(message: 'Invalid username/email or password', status: :unauthorized)
         end
     end
-
+{
+    "username": "ochacha",
+    "password": "ochacha"
+}
     def logout
         remove_user
         app_response(message: 'Logout successful')

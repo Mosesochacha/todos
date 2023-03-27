@@ -587,3 +587,338 @@ Filter chain halted as :session_expired? rendered or redirected
 Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 341)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jude"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rosy@roberts-streich.info"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "carroll"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "carroll"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "malissa@gerhold-erdman.biz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "carroll"], ["email", "malissa@gerhold-erdman.biz"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-27 09:11:59.788739"], ["updated_at", "2023-03-27 09:11:59.788739"]]
+  [1m[36mTRANSACTION (225.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Qui consectetur aut."], ["description", "Molestiae voluptatem sunt. Qui quia non. Vero dolorem sit."], ["status", 2], ["priority", 1], ["user_id", 3], ["created_at", "2023-03-27 09:12:00.109313"], ["updated_at", "2023-03-27 09:12:00.109313"]]
+  [1m[36mTRANSACTION (168.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ratione dolorum ut."], ["description", "Nemo quia libero. Quo et voluptas. Dolorem corporis sed."], ["status", 2], ["priority", 1], ["user_id", 3], ["created_at", "2023-03-27 09:12:00.288130"], ["updated_at", "2023-03-27 09:12:00.288130"]]
+  [1m[36mTRANSACTION (197.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "branden"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "toney@hudson.biz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "branden"], ["email", "toney@hudson.biz"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-27 09:13:28.361005"], ["updated_at", "2023-03-27 09:13:28.361005"]]
+  [1m[36mTRANSACTION (373.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "dignissimos iusto au"], ["description", "Est soluta aliquid. Cupiditate nulla animi. Adipisci architecto debitis."], ["status", 2], ["priority", 2], ["user_id", 4], ["created_at", "2023-03-27 09:13:28.785685"], ["updated_at", "2023-03-27 09:13:28.785685"]]
+  [1m[36mTRANSACTION (255.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.8ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "iusto molestiae quia"], ["description", "Blanditiis sed numquam. Ut assumenda dolor. Aut voluptatibus odit."], ["status", 2], ["priority", 1], ["user_id", 4], ["created_at", "2023-03-27 09:13:29.059384"], ["updated_at", "2023-03-27 09:13:29.059384"]]
+  [1m[36mTRANSACTION (386.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "laudantium autem nos"], ["description", "Iusto ut quae. Tenetur repudiandae molestiae. Ullam qui harum."], ["status", 0], ["priority", 0], ["user_id", 4], ["created_at", "2023-03-27 09:13:29.462384"], ["updated_at", "2023-03-27 09:13:29.462384"]]
+  [1m[36mTRANSACTION (352.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "nobis enim consectet"], ["description", "Enim tempore libero. Saepe inventore rerum. Enim asperiores iste."], ["status", 0], ["priority", 0], ["user_id", 4], ["created_at", "2023-03-27 09:13:29.828542"], ["updated_at", "2023-03-27 09:13:29.828542"]]
+  [1m[36mTRANSACTION (235.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "tenetur magni archit"], ["description", "Nemo omnis ea. Ducimus voluptate magnam. Non voluptate et."], ["status", 1], ["priority", 0], ["user_id", 4], ["created_at", "2023-03-27 09:13:30.079405"], ["updated_at", "2023-03-27 09:13:30.079405"]]
+  [1m[36mTRANSACTION (178.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.7ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "reiciendis et repell"], ["description", "Id fugiat excepturi. Voluptatum at sed. Consequatur quaerat ut."], ["status", 0], ["priority", 2], ["user_id", 4], ["created_at", "2023-03-27 09:13:30.274853"], ["updated_at", "2023-03-27 09:13:30.274853"]]
+  [1m[36mTRANSACTION (91.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "et non velit"], ["description", "Eos est dolores. Ea et architecto. Vel enim officiis."], ["status", 0], ["priority", 0], ["user_id", 4], ["created_at", "2023-03-27 09:13:30.385645"], ["updated_at", "2023-03-27 09:13:30.385645"]]
+  [1m[36mTRANSACTION (178.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "animi aut quas"], ["description", "Est odio incidunt. Officiis quaerat incidunt. Eos recusandae quae."], ["status", 2], ["priority", 0], ["user_id", 4], ["created_at", "2023-03-27 09:13:30.582788"], ["updated_at", "2023-03-27 09:13:30.582788"]]
+  [1m[36mTRANSACTION (188.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "accusantium ipsa con"], ["description", "Odio quibusdam et. Omnis ab soluta. Accusamus dignissimos ut."], ["status", 1], ["priority", 0], ["user_id", 4], ["created_at", "2023-03-27 09:13:30.784328"], ["updated_at", "2023-03-27 09:13:30.784328"]]
+  [1m[36mTRANSACTION (183.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "inventore pariatur i"], ["description", "Reprehenderit commodi possimus. In aperiam qui. Aut quia quo."], ["status", 0], ["priority", 0], ["user_id", 4], ["created_at", "2023-03-27 09:13:30.982580"], ["updated_at", "2023-03-27 09:13:30.982580"]]
+  [1m[36mTRANSACTION (95.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2023-03-27 12:43:08 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.0.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.0.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | Allocations: 931)
+Completed 200 OK in 13ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 7831)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:43:20 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 7ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 1214)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:45:57 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+Completed 422 Unprocessable Entity in 88ms (Views: 0.5ms | ActiveRecord: 2.4ms | Allocations: 6239)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-03-27 12:45:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/todos" for ::1 at 2023-03-27 12:45:59 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 834)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:46:00 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 724)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:46:01 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 728)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:46:02 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 726)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:46:39 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | Allocations: 1958)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:46:41 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | Allocations: 1748)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:46:42 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | Allocations: 1748)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:46:49 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 437ms (Views: 74.1ms | ActiveRecord: 2.3ms | Allocations: 25777)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:48:19 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 2507)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:48:30 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 2417)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:48:51 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 2417)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:48:51 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 2417)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:48:52 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 2417)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:48:52 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 2417)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:51:21 +0300
+Started GET "/todos" for ::1 at 2023-03-27 12:51:21 +0300
+Processing by TodosController#index as HTML
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | Allocations: 2008)
+
+
+Completed 422 Unprocessable Entity in 9ms (Views: 0.2ms | Allocations: 3945)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:51:25 +0300
+Started GET "/todos" for ::1 at 2023-03-27 12:51:25 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 7ms (Views: 0.4ms | Allocations: 1782)
+
+
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 8ms (Views: 0.6ms | Allocations: 1782)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:51:54 +0300
+Started GET "/todos" for ::1 at 2023-03-27 12:51:54 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as HTML
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 11ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 21226)
+
+
+Completed 422 Unprocessable Entity in 15ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 23305)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:53:06 +0300
+Processing by TodosController#index as HTML
+Started GET "/todos" for ::1 at 2023-03-27 12:53:06 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 18ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4358)
+
+
+Completed 422 Unprocessable Entity in 15ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4628)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:53:13 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1784)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:53:13 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1782)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:53:59 +0300
+Started GET "/todos" for ::1 at 2023-03-27 12:53:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as HTML
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 11ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 21227)
+
+
+Completed 422 Unprocessable Entity in 17ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 23310)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:54:01 +0300
+Started GET "/todos" for ::1 at 2023-03-27 12:54:01 +0300
+Processing by TodosController#index as HTML
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1825)
+
+
+Completed 422 Unprocessable Entity in 10ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3741)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:54:02 +0300
+Processing by TodosController#index as HTML
+Started GET "/todos" for ::1 at 2023-03-27 12:54:02 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2821)
+
+
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1990)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:54:03 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1782)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:54:03 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1782)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:54:05 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1782)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:54:05 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1794)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:54:14 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1782)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 12:54:20 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1782)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 13:16:14 +0300
+Processing by TodosController#index as HTML
+Started GET "/todos" for ::1 at 2023-03-27 13:16:14 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 38ms (Views: 0.2ms | Allocations: 4331)
+
+
+Completed 422 Unprocessable Entity in 12ms (Views: 0.2ms | Allocations: 4568)
+
+
+Started GET "/todos" for ::1 at 2023-03-27 13:17:10 +0300
+Started GET "/todos" for ::1 at 2023-03-27 13:17:10 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | Allocations: 466)
+
+
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | Allocations: 338)
+
+

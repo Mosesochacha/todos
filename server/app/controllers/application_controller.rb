@@ -10,6 +10,48 @@ class ApplicationController < ActionController::API
         }, status: status
     end
 
+    #hash token
+    def encode(uid, email)
+        payload = {
+          data: {
+            uid: uid, 
+            email: email
+          },
+          exp: Time.now.to_i + (6*3000)
+        }
+        begin
+          JWT.encode(payload, ENV['task_train_key'], 'H5256')
+        rescue JWT::EncodeError => er
+          app_response(message: 'failed', status: 400, data: { info: 'Something went wrong' }) 
+        end
+      end
+      
+
+      def verfy_auth
+           auth_headers = request.headers['Authorization']
+           if !auth_headers
+            app_response(message: 'failed', status: 401, data: { info: 'Request not authorized' })
+           else 
+            token = auth_headers.split('')[1]
+           render json: {
+            data: decode(token)[0]["data"]
+           }
+        end
+           
+      end
+
+      #unhash token
+def decode(token)
+    begin
+        JWT.encode(payload, ENV['task_train_key'] ,true , {algorithm:'H5256'})
+
+    rescue JWT::DecodeError => e
+        app_response(message: 'failed', status: 401, data: { info: 'Your session has expired. Please login again to continue' })
+    end
+    
+end
+
+
     # store user id in session
     def save_user(id)
         session[:uid] = id
