@@ -1,3 +1,3 @@
-class ApplicationRed < ActiveRed::Base
+class ApplicationRecord < ActiveRecord::Base
   primary_abstract_class
 end
