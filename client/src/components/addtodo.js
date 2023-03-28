@@ -13,7 +13,7 @@ export default function AddTod(userId) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`/todos`, {
+    const response = await fetch(`https://todosp.onrender.com/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

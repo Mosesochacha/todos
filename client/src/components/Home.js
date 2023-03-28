@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Home({ user, key, title, description, priority, status, id }) {
-  const URL = `/todos/${id}`;
+  const URL = `https://todosp.onrender.com/todos/${id}`;
 
   const [isEditing, setIsEditing] = useState(false);
   const [editedData, setEditedData] = useState({
