@@ -42,7 +42,7 @@ export default function AddTodo() {
     <center className="mt-5 addpet">
       <div className="card " style={{ width: "21rem" }}>
         <div className="card-body" id="addtodo">
-          <form onSubmit={handleSubmit} className="card">
+          <form onSubmit={handleSubmit} className="cards" style={{ width: "21rem" }}>
             <label>TITLE:</label>
             <input
               placeholder="ENTER TITLE"

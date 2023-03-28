@@ -5,7 +5,7 @@ import axios from "axios";
 import Login from "./Login";
 import NavBar from "./NavBar";
 import Home from "./Home";
-import AddTod from "./addtodo";
+import AddTodo from "./addtodo";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -63,7 +63,7 @@ function App() {
               <Login setUser={setUser} />
             </Route>
             <Route path="/add">
-                <AddTod />
+                <AddTodo />
               </Route>
             <Route path="/">
               <Home />
