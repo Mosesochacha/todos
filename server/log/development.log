@@ -4190,3 +4190,17 @@ Processing by TodosController#index as HTML
 Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5381)
 
 
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:56:04 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 5541)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:56:35 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.4ms | Allocations: 5377)
+
+
