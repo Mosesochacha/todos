@@ -1,6 +1,6 @@
 # TODO APP
 
-- This is a full-stack project that uses the Sinatra web framework and ActiveRecord ORM for the backend, and React for the frontend. This README file serves as a guide to help you understand the project and how to set it up.
+This is a simple to-do list application that helps you keep track of tasks that you need to complete. With this app, you can easily add new tasks, mark them as completed, and delete them when you're done.
 
 # Description
 
