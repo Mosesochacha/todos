@@ -24,7 +24,7 @@ This is a simple to-do list application that helps you keep track of tasks that 
 
 Use the link below to for a live website
 
-https://pet-finder-nine.vercel.app/
+https://todos-q16k.vercel.app/
 
 ## Running and testing
 
