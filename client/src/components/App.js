@@ -37,8 +37,7 @@ function App() {
           <Switch>
             <Route exact path="/">
               {todos.length > 0 &&
-                todos.map((todo) => {
-                  console.log(todo);
+                todos.data.map((todo) => {
                   return (
                     <div key={todo.id}>
                       <Home
