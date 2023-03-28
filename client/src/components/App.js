@@ -21,7 +21,7 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    axios.get("/todos").then((res) => {
+    axios.get("https://todosp.onrender.com/todos").then((res) => {
       setTodos(res.data);
     });
   }, []);
