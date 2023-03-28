@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-
-export default function AddTod() {
+export default function AddTodo() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
   const [priority, setPriority] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  const history = useHistory()
+  const history = useHistory();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,13 +25,15 @@ export default function AddTod() {
         priority,
       }),
     });
+
     const data = await response.json();
     if (data.message) {
       setMessage(data.message);
       setError("");
-      history.push("/home")
+      history.push("/");
     } else {
       setMessage("");
+      history.push("/add");
       setError(data.error);
     }
   };
@@ -67,7 +69,7 @@ export default function AddTod() {
             <label>STATUS: </label>
             <input
               type="text"
-              placeholder="ENTER ANIMAL SPECIES"
+              placeholder="ENTER STATUS"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
             />
