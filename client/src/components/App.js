@@ -5,7 +5,7 @@ import axios from "axios";
 import Login from "./Login";
 import NavBar from "./NavBar";
 import Home from "./Home";
-import AddTod from "./addtodo";
+import AddTodo from "./addtodo";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -18,6 +18,7 @@ function App() {
       }
     });
   }, []);
+
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
     });
   }, []);
 
-  // console.log(todos);
+  console.log(todos);
 
   return (
     <>
@@ -34,26 +35,23 @@ function App() {
       <main>
         {user ? (
           <Switch>
-            <Route path="/add">
-                <AddTod/>
-            </Route>
-
             <Route exact path="/">
-              {todos.data.map((todo) => {
-                console.log(todo);
-                return (
-                  <div key={todo.id}>
-                    <Home
-                      key={todo.id}
-                      title={todo.title}
-                      priority={todo.priority}
-                      description={todo.description}
-                      status={todo.status}
-                      user={user}
-                    />
-                  </div>
-                );
-              })}
+              {todos.length > 0 &&
+                todos.data.map((todo) => {
+                  return (
+                    <div key={todo.id}>
+                      <Home
+                        key={todo.id}
+                        title={todo.title}
+                        priority={todo.priority}
+                        description={todo.description}
+                        status={todo.status}
+                        user={user}
+                      />
+                    </div>
+                  );
+                })}
+
             </Route>
           </Switch>
         ) : (
@@ -64,7 +62,9 @@ function App() {
             <Route path="/login">
               <Login setUser={setUser} />
             </Route>
-
+            <Route path="/add">
+                <AddTodo />
+              </Route>
             <Route path="/">
               <Home />
             </Route>
@@ -74,5 +74,4 @@ function App() {
     </>
   );
 }
-
 export default App;
