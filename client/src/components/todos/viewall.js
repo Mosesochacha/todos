@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function AllTodos({ title, status, priority, description, id }) {
-  const URL = `https://pet-finder-pgl9.onrender.com/pet/${id}`;
+  const URL = `https://todosp.onrender.com/todos/${id}`;
 
   const [isEditing, setIsEditing] = useState(false);
   const [editedData, setEditedData] = useState({

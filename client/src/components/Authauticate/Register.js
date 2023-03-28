@@ -10,7 +10,7 @@ export default function Login() {
 
   const handRegister = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/login", {
+    fetch("https://todosp.onrender.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

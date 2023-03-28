@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 
 export default function HomepageNavbar() {
@@ -12,8 +12,8 @@ export default function HomepageNavbar() {
           <a href="/,l" className="navbar-brand">
             WELCOME TO TODOS
           </a>
-          <NavLink to="/login">LOGIN</NavLink>
-          <NavLink to="/register">REGISTER</NavLink>
+          {/* <NavLink to="/login">LOGIN</NavLink>
+          <NavLink to="/register">REGISTER</NavLink> */}
         </div>
       </nav>
     </div>

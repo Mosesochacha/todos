@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 
 export default function AddTod(userId) {
   const [title, setTitle] = useState("");
@@ -8,11 +9,11 @@ export default function AddTod(userId) {
   const [priority, setPriority] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  const history = useNavigate
+  const history = useHistory()
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`https://todosp.onrender.com/todos`, {
+    const response = await fetch(`/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

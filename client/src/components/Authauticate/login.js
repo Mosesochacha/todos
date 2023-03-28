@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -9,7 +9,7 @@ export default function Login() {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/login", {
+    fetch("https://todosp.onrender.com/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,9 +50,9 @@ export default function Login() {
         <br />
         <button>LOGIN</button>
         <p>Not member?
-          <NavLink to="/register">
+          {/* <NavLink to="/register">
             register
-          </NavLink>
+          </NavLink> */}
         </p>
       </form>
     </div>
