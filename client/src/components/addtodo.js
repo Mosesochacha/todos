@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 
 export default function AddTod(userId) {
   const [title, setTitle] = useState("");
@@ -8,11 +9,11 @@ export default function AddTod(userId) {
   const [priority, setPriority] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-
+  const history = useHistory()
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`https://pet-finder-pgl9.onrender.com/todos`, {
+    const response = await fetch(`https://todosp.onrender.com/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +29,7 @@ export default function AddTod(userId) {
     if (data.message) {
       setMessage(data.message);
       setError("");
-      return <Redirect to="/home" />;
+      history.push("/home")
     } else {
       setMessage("");
       setError(data.error);

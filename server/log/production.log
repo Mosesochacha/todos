@@ -2,3 +2,5 @@ W, [2023-03-27T12:14:08.864453 #38520]  WARN -- : You are running SQLite in prod
 I, [2023-03-27T12:14:09.302479 #38520]  INFO -- : Migrating to CreateUsers (20230322074123)
 I, [2023-03-27T12:14:09.784861 #38520]  INFO -- : Migrating to CreateTodos (20230323082526)
 W, [2023-03-27T12:14:29.957756 #38612]  WARN -- : You are running SQLite in production, this is generally not recommended. You can disable this warning by setting "config.active_record.sqlite3_production_warning=false".
+W, [2023-03-28T18:10:02.081820 #13113]  WARN -- : You are running SQLite in production, this is generally not recommended. You can disable this warning by setting "config.active_record.sqlite3_production_warning=false".
+W, [2023-03-28T18:10:55.275913 #13133]  WARN -- : You are running SQLite in production, this is generally not recommended. You can disable this warning by setting "config.active_record.sqlite3_production_warning=false".

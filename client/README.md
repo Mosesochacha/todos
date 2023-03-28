@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# TODO APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple to-do list application that helps you keep track of tasks that you need to complete. With this app, you can easily add new tasks, mark them as completed, and delete them when you're done.
 
-## Available Scripts
+# Description
 
-In the project directory, you can run:
+  -The project is a simple web application that allows users to create and manage their Pets. The backend is built using Sinatra and ActiveRecord, while the frontend is built using React. The application allows users to create, read, update, and delete Pets they have added.
 
-### `npm start`
+# Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- In order for you to use the content in this repo ensure you have the following:
+  - Linux
+  - Mac Os
+- To use this repo on your machine you need to clone by either using:
+  - terminal
+  - forking directly from the repo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+###### Cloning using button labelled forking
 
-### `npm test`
+      - click on the the fork button in the top most rigt corner of the github to fork the repo to your own account
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use the link below to for a live website
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://pet-finder-nine.vercel.app/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running and testing
 
-### `npm run eject`
+Running the application is very straight forward. You can use the following steps to run the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Before testing this application you need to do the following in your terminal:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - Navigate through the the folder called client and run the command below to install npm dependencies by running;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+                      cd client
+                      npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+###### Test the application by:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+        - First Login by clicking the "Login" button is you already have authenticated
 
-### Code Splitting
+        -else if you haven't authenticated signup by clicking the "sign up" button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### - In the app there is a Navbar which have the following features:
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+###### Home
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Displays all todos
 
-### Advanced Configuration
+###### LOGOUT
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- it allows user to log out
 
-### Deployment
+- In Each card Has edit buton and delete buttons which allows user to  edit and delete the todos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Author
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Moses Ochacha
+
+## License
+
+[Apache License 2.0](https://choosealicense.com/licenses/)
+
+## Tech Stack
+
+        - 
+        - Bootstrap
+       -React
+        - cascading stylesheets

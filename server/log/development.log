@@ -922,3 +922,3285 @@ Processing by TodosController#index as HTML
 Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | Allocations: 338)
 
 
+Started GET "/todos" for ::1 at 2023-03-27 17:40:05 +0300
+Processing by TodosController#index as HTML
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 260ms (Views: 0.4ms | Allocations: 611)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:04:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"s", "password"=>"[FILTERED]", "user"=>{"username"=>"s"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab6891d898>, params: {"username"=>"s", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"s"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab6891d898>, params: {"username"=>"s", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"s"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 's' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 401 Unauthorized in 36ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 22489)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:04:34 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"s", "password"=>"[FILTERED]", "user"=>{"username"=>"s"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab5c022088>, params: {"username"=>"s", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"s"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab5c022088>, params: {"username"=>"s", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"s"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 's' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 401 Unauthorized in 5ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 928)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:04:34 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"s", "password"=>"[FILTERED]", "user"=>{"username"=>"s"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab6001de58>, params: {"username"=>"s", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"s"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab6001de58>, params: {"username"=>"s", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"s"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 's' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 908)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 17:04:55 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"s", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "user"=>{"username"=>"s", "email"=>"ochachamoses443@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fab5401e328>, params: {"username"=>"s", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"s", "email"=>"ochachamoses443@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "s"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "s"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 1101ms (Views: 663.4ms | ActiveRecord: 0.7ms | Allocations: 363420)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 17:05:59 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fab58023108>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Moses"], ["email", "ochachamoses443@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-28 14:05:59.737185"], ["updated_at", "2023-03-28 14:05:59.737185"]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (224.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Moses"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 201 Created in 495ms (Views: 0.6ms | ActiveRecord: 226.4ms | Allocations: 5747)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:06:09 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab68760c80>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab68760c80>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab68760c80>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 500 Internal Server Error in 249ms (ActiveRecord: 0.3ms | Allocations: 1551)
+
+
+  
+NotImplementedError (Unsupported signing method):
+  
+app/controllers/application_controller.rb:23:in `encode'
+app/controllers/users_controller.rb:20:in `login'
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:08:35 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab5c1662c8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab5c1662c8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fab5c1662c8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 249ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 3657)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-28 17:08:52 +0300
+Processing by TodosController#create as HTML
+  Parameters: {"title"=>"", "description"=>"", "status"=>"CANCELLED", "priority"=>"MEDIUM", "todo"=>{"title"=>"", "description"=>"", "status"=>"CANCELLED", "priority"=>"MEDIUM"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+[31mUnpermitted parameter: :todo. Context: { controller: TodosController, action: create, request: #<ActionDispatch::Request:0x00007fab60057108>, params: {"title"=>"", "description"=>"", "status"=>"CANCELLED", "priority"=>"MEDIUM", "controller"=>"todos", "action"=>"create", "todo"=>{"title"=>"", "description"=>"", "status"=>"CANCELLED", "priority"=>"MEDIUM"}} }[0m
+Completed 422 Unprocessable Entity in 61ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 24405)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 17:43:35 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007feb609b2398>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 1001ms (Views: 694.0ms | ActiveRecord: 1.6ms | Allocations: 383302)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 17:43:42 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007feb580274e8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 269ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 4650)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:44:23 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb4c01dc88>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb4c01dc88>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb4c01dc88>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 349ms (Views: 29.5ms | ActiveRecord: 0.5ms | Allocations: 2128)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:45:30 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:45:30 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 158ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 537)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:45:39 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:46:15 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:46:22 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:46:32 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:46:39 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:46:54 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:48:03 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 47ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:51:14 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 348)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-28 17:51:20 +0300
+Processing by UsersController#logout as */*
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 319)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:52:03 +0300
+Processing by UsersController#check_login_status as */*
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 46ms (Views: 0.3ms | Allocations: 385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:52:06 +0300
+Processing by UsersController#check_login_status as */*
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | Allocations: 372)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:52:08 +0300
+Processing by UsersController#check_login_status as */*
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | Allocations: 366)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:52:16 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb580f2648>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb580f2648>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb580f2648>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 752ms (Views: 130.1ms | ActiveRecord: 41.5ms | Allocations: 1697)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-28 17:52:24 +0300
+Processing by UsersController#logout as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:52:27 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb62407c70>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb62407c70>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb62407c70>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 248ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1369)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-28 17:52:47 +0300
+Processing by UsersController#logout as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 314)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:52:50 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb540cc050>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb540cc050>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb540cc050>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 270ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1377)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-28 17:54:02 +0300
+Processing by UsersController#logout as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 306)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:54:43 +0300
+Processing by UsersController#check_login_status as */*
+Filter chain halted as :session_expired? rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 378)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:54:48 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb6243e6f8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb6243e6f8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb6243e6f8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 260ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1371)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-28 17:54:55 +0300
+Processing by TodosController#create as HTML
+  Parameters: {"title"=>"", "description"=>"", "status"=>"", "priority"=>"", "todo"=>{"title"=>"", "description"=>"", "status"=>"", "priority"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+[31mUnpermitted parameter: :todo. Context: { controller: TodosController, action: create, request: #<ActionDispatch::Request:0x00007feb50145120>, params: {"title"=>"", "description"=>"", "status"=>"", "priority"=>"", "controller"=>"todos", "action"=>"create", "todo"=>{"title"=>"", "description"=>"", "status"=>"", "priority"=>""}} }[0m
+Completed 422 Unprocessable Entity in 114ms (Views: 1.4ms | ActiveRecord: 1.4ms | Allocations: 23346)
+
+
+Started PUT "/todos/undefined" for 127.0.0.1 at 2023-03-28 17:55:07 +0300
+Processing by TodosController#update as */*
+  Parameters: {"title"=>"", "status"=>"", "priority"=>"", "description"=>"", "id"=>"undefined", "todo"=>{"title"=>"", "description"=>"", "status"=>"", "priority"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:14:in `update'
+Completed 422 Unprocessable Entity in 43ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1868)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:56:40 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-28 17:56:43 +0300
+Processing by UsersController#logout as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:56:47 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb541140f8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb541140f8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb541140f8>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 255ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1438)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 17:56:49 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb581d6258>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb581d6258>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007feb581d6258>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 249ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:56:54 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:58:15 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:59:11 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 17:59:15 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started PUT "/todos/undefined" for 127.0.0.1 at 2023-03-28 17:59:32 +0300
+Processing by TodosController#update as */*
+  Parameters: {"title"=>"", "status"=>"", "priority"=>"", "description"=>"", "id"=>"undefined", "todo"=>{"title"=>"", "description"=>"", "status"=>"", "priority"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:14:in `update'
+Completed 422 Unprocessable Entity in 8ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1495)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:01:38 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:01:38 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:03:08 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:03:10 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:04:12 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:04:15 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:04:17 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:05:48 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 348)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:05:48 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 1892)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:05:59 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:05:59 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 1457)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lawanda"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "roger@baumbach.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "lawanda"], ["email", "roger@baumbach.net"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-28 15:08:01.118167"], ["updated_at", "2023-03-28 15:08:01.118167"]]
+  [1m[36mTRANSACTION (312.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "dolore minus ut"], ["description", "Omnis placeat temporibus. Nihil sapiente blanditiis. Quaerat earum aut."], ["status", 2], ["priority", 0], ["user_id", 6], ["created_at", "2023-03-28 15:08:01.477814"], ["updated_at", "2023-03-28 15:08:01.477814"]]
+  [1m[36mTRANSACTION (249.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "ut eaque dolores"], ["description", "Temporibus consequatur itaque. Iste quos fugiat. Eligendi nobis voluptatem."], ["status", 2], ["priority", 0], ["user_id", 6], ["created_at", "2023-03-28 15:08:01.742531"], ["updated_at", "2023-03-28 15:08:01.742531"]]
+  [1m[36mTRANSACTION (373.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "qui rerum est"], ["description", "Sint quia veniam. Ut nihil non. Non et rem."], ["status", 1], ["priority", 2], ["user_id", 6], ["created_at", "2023-03-28 15:08:02.132144"], ["updated_at", "2023-03-28 15:08:02.132144"]]
+  [1m[36mTRANSACTION (291.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "ex sequi fugiat"], ["description", "Placeat quo necessitatibus. Sit exercitationem eum. Esse sunt perferendis."], ["status", 1], ["priority", 1], ["user_id", 6], ["created_at", "2023-03-28 15:08:02.439483"], ["updated_at", "2023-03-28 15:08:02.439483"]]
+  [1m[36mTRANSACTION (258.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "quis et odit"], ["description", "Praesentium quis et. Totam accusamus atque. Magnam quas eos."], ["status", 1], ["priority", 0], ["user_id", 6], ["created_at", "2023-03-28 15:08:02.713549"], ["updated_at", "2023-03-28 15:08:02.713549"]]
+  [1m[36mTRANSACTION (193.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "dolores perferendis "], ["description", "Voluptatem quisquam occaecati. Voluptates a consequuntur. Vel doloribus et."], ["status", 2], ["priority", 2], ["user_id", 6], ["created_at", "2023-03-28 15:08:02.923318"], ["updated_at", "2023-03-28 15:08:02.923318"]]
+  [1m[36mTRANSACTION (246.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "tempora quaerat volu"], ["description", "Labore consequatur ducimus. Placeat laudantium odio. Temporibus et aspernatur."], ["status", 2], ["priority", 0], ["user_id", 6], ["created_at", "2023-03-28 15:08:03.184421"], ["updated_at", "2023-03-28 15:08:03.184421"]]
+  [1m[36mTRANSACTION (315.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "voluptates occaecati"], ["description", "Tenetur voluptas hic. Vitae dolores voluptatem. Et minus cum."], ["status", 2], ["priority", 0], ["user_id", 6], ["created_at", "2023-03-28 15:08:03.515407"], ["updated_at", "2023-03-28 15:08:03.515407"]]
+  [1m[36mTRANSACTION (247.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "sunt unde eveniet"], ["description", "Ullam ad molestiae. Eveniet error nostrum. Iusto ducimus ipsam."], ["status", 0], ["priority", 1], ["user_id", 6], ["created_at", "2023-03-28 15:08:03.777828"], ["updated_at", "2023-03-28 15:08:03.777828"]]
+  [1m[36mTRANSACTION (246.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "atque saepe aut"], ["description", "Qui rerum sit. Rem corrupti est. Itaque voluptatem nihil."], ["status", 2], ["priority", 1], ["user_id", 6], ["created_at", "2023-03-28 15:08:04.037427"], ["updated_at", "2023-03-28 15:08:04.037427"]]
+  [1m[36mTRANSACTION (307.1ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users" for 127.0.0.1 at 2023-03-28 18:08:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007ff79897f3f0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 490ms (Views: 176.1ms | ActiveRecord: 1.9ms | Allocations: 383741)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 18:08:56 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007ff79001c428>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 269ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 4646)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 18:09:05 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007ff7a401f5b0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007ff7a401f5b0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007ff7a401f5b0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 253ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2115)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "louise"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jared_upton@kerluke-beier.io"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "louise"], ["email", "jared_upton@kerluke-beier.io"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-28 15:11:12.674349"], ["updated_at", "2023-03-28 15:11:12.674349"]]
+  [1m[36mTRANSACTION (274.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "eum asperiores velit"], ["description", "Veritatis soluta dolorem. Laudantium quas similique. Quia id quia."], ["status", 0], ["priority", 2], ["user_id", 7], ["created_at", "2023-03-28 15:11:12.976930"], ["updated_at", "2023-03-28 15:11:12.976930"]]
+  [1m[36mTRANSACTION (278.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "est fuga ex"], ["description", "Occaecati sunt quo. Minima molestias dolore. Corrupti id cupiditate."], ["status", 1], ["priority", 0], ["user_id", 7], ["created_at", "2023-03-28 15:11:13.268818"], ["updated_at", "2023-03-28 15:11:13.268818"]]
+  [1m[36mTRANSACTION (213.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "porro dignissimos re"], ["description", "Ullam libero iusto. Doloribus in officiis. Dolore accusantium delectus."], ["status", 2], ["priority", 2], ["user_id", 7], ["created_at", "2023-03-28 15:11:13.494914"], ["updated_at", "2023-03-28 15:11:13.494914"]]
+  [1m[36mTRANSACTION (218.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "sed sed aut"], ["description", "Aut reiciendis eaque. Aut quo et. Sapiente aliquid praesentium."], ["status", 2], ["priority", 0], ["user_id", 7], ["created_at", "2023-03-28 15:11:13.728176"], ["updated_at", "2023-03-28 15:11:13.728176"]]
+  [1m[36mTRANSACTION (213.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "nulla perspiciatis n"], ["description", "Ea voluptas vel. Velit ut eius. Et alias et."], ["status", 1], ["priority", 2], ["user_id", 7], ["created_at", "2023-03-28 15:11:13.955532"], ["updated_at", "2023-03-28 15:11:13.955532"]]
+  [1m[36mTRANSACTION (329.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "corporis eligendi ne"], ["description", "Repellat possimus sit. Deleniti in reiciendis. Laborum tenetur eum."], ["status", 1], ["priority", 2], ["user_id", 7], ["created_at", "2023-03-28 15:11:14.300696"], ["updated_at", "2023-03-28 15:11:14.300696"]]
+  [1m[36mTRANSACTION (291.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "doloribus adipisci m"], ["description", "Qui omnis aspernatur. In corporis modi. Molestiae vero autem."], ["status", 2], ["priority", 0], ["user_id", 7], ["created_at", "2023-03-28 15:11:14.607335"], ["updated_at", "2023-03-28 15:11:14.607335"]]
+  [1m[36mTRANSACTION (341.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "ut pariatur distinct"], ["description", "Libero harum quae. Ipsa suscipit laborum. Itaque optio non."], ["status", 2], ["priority", 1], ["user_id", 7], ["created_at", "2023-03-28 15:11:14.964432"], ["updated_at", "2023-03-28 15:11:14.964432"]]
+  [1m[36mTRANSACTION (341.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "suscipit fuga animi"], ["description", "Quas sint placeat. Voluptas voluptatem voluptas. Qui esse non."], ["status", 1], ["priority", 1], ["user_id", 7], ["created_at", "2023-03-28 15:11:15.322174"], ["updated_at", "2023-03-28 15:11:15.322174"]]
+  [1m[36mTRANSACTION (301.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "status", "priority", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "voluptatem tempore e"], ["description", "Qui quo repudiandae. Dolores ipsam repudiandae. Et qui sint."], ["status", 2], ["priority", 2], ["user_id", 7], ["created_at", "2023-03-28 15:11:15.637558"], ["updated_at", "2023-03-28 15:11:15.637558"]]
+  [1m[36mTRANSACTION (304.7ms)[0m  [1m[36mcommit transaction[0m
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-28 18:11:29 +0300
+Processing by UsersController#logout as */*
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 526)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 18:11:36 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007ff7900b9f70>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 264ms (Views: 0.9ms | ActiveRecord: 2.5ms | Allocations: 6865)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 18:11:45 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007ff7a40756e0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007ff7a40756e0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007ff7a40756e0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 267ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1756)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-28 18:12:18 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#logout as */*
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 21165)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 18:12:25 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fd3c401c968>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"ochachamoses443@gmail.com", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Moses", "email"=>"ochachamoses443@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ochachamoses443@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 454ms (Views: 184.4ms | ActiveRecord: 1.7ms | Allocations: 362607)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 18:12:31 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd3bc01ef40>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd3bc01ef40>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd3bc01ef40>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 250ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1989)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 18:12:36 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 12ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 6277)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:12:59 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:12:59 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 470)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 1852)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:13:09 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:13:09 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 2958)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:13:10 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:13:10 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1444)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:13:13 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:13:13 +0300
+Processing by UsersController#check_login_status as */*
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 1845)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:13:23 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:13:23 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1456)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:13:31 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:13:31 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 1795)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:13:43 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:13:43 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1489)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:14:27 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:14:27 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 1452)
+
+
+Started GET "/" for ::1 at 2023-03-28 18:16:16 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.0.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.0.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.7ms | Allocations: 824)
+Completed 200 OK in 192ms (Views: 70.4ms | ActiveRecord: 0.0ms | Allocations: 6480)
+
+
+Started GET "/todos" for ::1 at 2023-03-28 18:16:22 +0300
+Processing by TodosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 1700)
+
+
+Started GET "/todos" for ::1 at 2023-03-28 18:20:44 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 72ms (Views: 0.5ms | Allocations: 2274)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-03-28 18:20:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/todos" for ::1 at 2023-03-28 18:21:04 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 107ms (Views: 25.5ms | ActiveRecord: 2.6ms | Allocations: 26750)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:21:25 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:21:25 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 5454)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 562)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:23:15 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:23:15 +0300
+Processing by TodosController#index as HTML
+Processing by UsersController#check_login_status as */*
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 351)
+
+
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.6ms | Allocations: 5872)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:24:25 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:24:25 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:24:27 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:24:27 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:24:52 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:24:52 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 5386)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:25:22 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:25:22 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 5395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:25:23 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:25:23 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.4ms | Allocations: 5399)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:25:24 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:25:24 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.6ms | Allocations: 5401)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:25:38 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:25:38 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.4ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:25:56 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:25:56 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.5ms | Allocations: 6605)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:25:57 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:25:57 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 5407)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:26:00 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:26:00 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:26:04 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:26:04 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:26:11 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:26:11 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 5395)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:26:16 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:26:16 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:26:17 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:26:17 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.4ms | Allocations: 6443)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:26:49 +0300
+Processing by UsersController#check_login_status as */*
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:26:49 +0300
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.5ms | Allocations: 5395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:26:58 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:26:58 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.3ms | Allocations: 5391)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:27:44 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:27:44 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.6ms | Allocations: 5396)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:28:01 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:28:01 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.5ms | Allocations: 5397)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:28:02 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:28:02 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 5397)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:28:13 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:28:13 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 5387)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:28:17 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:28:17 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 5379)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:28:30 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:28:30 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.3ms | Allocations: 5397)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:28:43 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:28:43 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:28:51 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:28:51 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 0.5ms | Allocations: 5387)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:14 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:14 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 5375)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:16 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:16 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.3ms | Allocations: 7189)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:18 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:18 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:19 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:19 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 5393)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:24 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:24 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 5397)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:26 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:26 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 364)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5403)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:27 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:27 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 5411)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:30 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:30 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:33 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:33 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5377)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:44 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:44 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 5381)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:47 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:47 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 5397)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:29:58 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:29:58 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 5379)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:30:13 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:30:13 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 5395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:30:38 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:30:38 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.6ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:30:43 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:30:43 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 5389)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:30:48 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:30:48 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.4ms | Allocations: 5434)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:30:50 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:30:50 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.5ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:35:18 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:35:18 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (14.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 40ms (Views: 24.7ms | ActiveRecord: 14.9ms | Allocations: 5430)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:35:50 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:35:50 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.6ms | Allocations: 5634)
+
+
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 741)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:36:09 +0300
+Processing by TodosController#index as HTML
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:36:09 +0300
+  [1m[36mTodo Load (3.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 3.0ms | Allocations: 5789)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:36:12 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:36:12 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.4ms | Allocations: 5385)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:36:21 +0300
+Processing by UsersController#check_login_status as */*
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:36:21 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 5381)
+
+
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:36:35 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:36:35 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5381)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:37:07 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:37:07 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:37:23 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:37:23 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 5432)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:37:29 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:37:29 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Processing by UsersController#check_login_status as */*
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 6134)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:37:36 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:37:36 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.2ms | Allocations: 5426)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:37:57 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:37:57 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 29ms (Views: 24.9ms | ActiveRecord: 0.5ms | Allocations: 5381)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:37:58 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:37:58 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:38:00 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:38:00 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 5381)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:38:02 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:38:02 +0300
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.5ms | Allocations: 5563)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:38:17 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:38:17 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 5377)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:38:21 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:38:21 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 5381)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:38:33 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:38:33 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms | Allocations: 5389)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:39:09 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:39:09 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 180ms (Views: 178.8ms | ActiveRecord: 0.3ms | Allocations: 5407)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:39:38 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:39:38 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 5397)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:42:14 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:42:14 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.5ms | Allocations: 5387)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:42:16 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:42:16 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:42:23 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:42:24 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 5381)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:43:22 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:43:22 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.5ms | Allocations: 5404)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:44:19 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:44:19 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 5395)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 18:44:25 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 929ms (Views: 0.5ms | ActiveRecord: 39.6ms | Allocations: 7352)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:58:17 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:58:17 +0300
+Processing by TodosController#index as HTML
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 348)
+
+
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 174ms (Views: 117.0ms | ActiveRecord: 1.1ms | Allocations: 6374)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:09 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:09 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.7ms | Allocations: 5383)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:13 +0300
+Processing by TodosController#index as HTML
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:13 +0300
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.2ms | Allocations: 6140)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 372)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:16 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:16 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 5391)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:34 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:34 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 6110)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:35 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 364)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:35 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms | Allocations: 5403)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:42 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:42 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 5387)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:44 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:44 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:50 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:50 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 5395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:51 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:51 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.2ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:55 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:55 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 5387)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 18:59:57 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 5393)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 18:59:57 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:00:06 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:00:06 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.4ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:00:09 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:00:09 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 5377)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:00:13 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:00:13 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:00:18 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 360)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:00:18 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (2.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 2.3ms | Allocations: 5399)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:00:21 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:00:21 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:00:22 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:00:22 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms | Allocations: 5379)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-28 19:01:29 +0300
+Processing by UsersController#logout as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 313)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 19:01:32 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd3c52b01b0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd3c52b01b0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd3c52b01b0>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 310ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1686)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:02:38 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:02:38 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 5395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:02:42 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:02:42 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.3ms | Allocations: 5385)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:02:48 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:02:48 +0300
+Processing by UsersController#check_login_status as */*
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 5385)
+
+
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started DELETE "/users/logout" for 127.0.0.1 at 2023-03-28 19:02:51 +0300
+Processing by UsersController#logout as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-28 19:02:55 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"", "user"=>{"username"=>"Moses", "email"=>""}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fd3b8549528>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "email"=>"", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Moses", "email"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Moses"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 256ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 5125)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2023-03-28 19:03:16 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"Moses", "password"=>"[FILTERED]", "user"=>{"username"=>"Moses"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd3b8583e58>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd3b8583e58>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Moses' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd3b8583e58>, params: {"username"=>"Moses", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Moses"}} }[0m
+Completed 200 OK in 273ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1373)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:03:58 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:03:58 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (2.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 2.5ms | Allocations: 5381)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:04:01 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 5386)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:04:01 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:04:01 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:04:01 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 5397)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:04:11 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:04:11 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:04:18 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:04:18 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 5391)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:04:42 +0300
+Processing by UsersController#check_login_status as */*
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:04:43 +0300
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 5401)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:05:04 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:05:04 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms | Allocations: 6522)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:05:10 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:05:10 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.3ms | Allocations: 6777)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:05:18 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:05:18 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.0ms | Allocations: 5397)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:05:21 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:05:21 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:05:28 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:05:28 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.4ms | Allocations: 5379)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:06:50 +0300
+Processing by UsersController#check_login_status as */*
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:06:50 +0300
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 5377)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:07:52 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:07:52 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.6ms | Allocations: 5393)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:07:52 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:07:52 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 5387)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:07:53 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:07:53 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.4ms | Allocations: 5381)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:07:53 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:07:53 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 5395)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:14:24 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 126ms (Views: 16.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:14:25 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 140ms (Views: 138.4ms | ActiveRecord: 23.8ms | Allocations: 5533)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:15:15 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.4ms | Allocations: 5381)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:15:24 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.3ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:15:37 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:15:47 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:15:47 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:15:54 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:16:09 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:16:19 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:16:21 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:16:21 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 5395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:16:22 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:16:22 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.8ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:16:23 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:16:23 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.5ms | Allocations: 5393)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:16:28 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:16:28 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 5387)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:16:39 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.2ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:16:39 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:16:53 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:16:53 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:16:57 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:16:57 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 5381)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:17:01 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:17:01 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 5387)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:17:03 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:17:03 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 5397)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:17:54 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 66ms (Views: 65.7ms | ActiveRecord: 0.0ms | Allocations: 359)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:17:54 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.4ms | Allocations: 5398)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:17:59 +0300
+Processing by TodosController#index as HTML
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:17:59 +0300
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 5388)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:18:01 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:18:01 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:18:18 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 358)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:18:18 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.5ms | Allocations: 5397)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:18:46 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:18:46 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:19:12 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:19:12 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:19:48 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:19:48 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 5381)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:19:52 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:19:52 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:20:01 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:20:01 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms | Allocations: 5387)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:20:03 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:20:03 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 5381)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:20:18 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:20:18 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 0.3ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:20:19 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:20:19 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.7ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:20:19 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:20:19 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.5ms | Allocations: 5379)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:20:22 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:20:22 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:20:24 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:20:24 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:20:57 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:20:57 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 5395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:21:00 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:21:00 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (4.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 4.5ms | Allocations: 5424)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:21:26 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:21:26 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 5393)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:21:35 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:21:35 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.4ms | Allocations: 6534)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:21:40 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:21:40 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.2ms | Allocations: 5391)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 1.0ms | Allocations: 5535)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 5389)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 5377)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 6077)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 5377)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:43 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 5381)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.3ms | Allocations: 5379)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Processing by UsersController#check_login_status as */*
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.2ms | Allocations: 6493)
+
+
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 5381)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 360)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.4ms | Allocations: 5399)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Processing by UsersController#check_login_status as */*
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:44 +0300
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 5379)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:27:45 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:27:45 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 5387)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:28:17 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:28:17 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.6ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:28:18 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:28:18 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.4ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:28:28 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:28:28 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Processing by UsersController#check_login_status as */*
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.3ms | Allocations: 6328)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:28:41 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:28:41 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 5379)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:29:41 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 7ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1567)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:29:42 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 7ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1494)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:29:49 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 9ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 1498)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:29:50 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 8ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1500)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:29:51 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 8ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1492)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:29:51 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 7ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1502)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:29:52 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 11ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1502)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:29:57 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1498)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:29:58 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1490)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 19:30:00 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 8ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 1500)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:30:29 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:30:29 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.2ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:30:31 +0300
+Processing by UsersController#check_login_status as */*
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:30:31 +0300
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:30:36 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:30:36 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 5395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:30:38 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 364)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:30:38 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 5403)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:31:07 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:31:07 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 5387)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:31:13 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:31:13 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 5381)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:31:35 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:31:35 +0300
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.2ms | Allocations: 6127)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:31:45 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:31:45 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms | Allocations: 5389)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:32:05 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:32:05 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 5393)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:32:20 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:32:20 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:36:12 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:36:12 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 252ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (90.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 107ms (Views: 15.2ms | ActiveRecord: 90.0ms | Allocations: 5393)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:36:29 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:36:29 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 5377)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:36:47 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:36:47 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 364)
+
+
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.2ms | Allocations: 6874)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:39:52 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 340)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:39:52 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 5379)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:42:04 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:42:04 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:42:04 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:42:04 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 5391)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:42:04 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:42:04 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 5393)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:42:04 +0300
+Processing by UsersController#check_login_status as */*
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:42:04 +0300
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 5393)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:42:05 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:42:05 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 5383)
+
+
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:42:05 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:42:05 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 5384)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 19:42:05 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 19:42:05 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 6543)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:04:01 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 334)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:04:01 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 39.0ms | Allocations: 5568)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:04:16 +0300
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:04:16 +0300
+Processing by UsersController#check_login_status as */*
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 1354)
+
+
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.4ms | Allocations: 5662)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:04:30 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 378)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:04:30 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5395)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:04:32 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:04:32 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.5ms | Allocations: 5385)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 20:09:36 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1558)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:11:56 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:11:56 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:12:09 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:12:09 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:12:16 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:12:16 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 5377)
+
+
+Started DELETE "/todos/undefined" for 127.0.0.1 at 2023-03-28 20:13:31 +0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined", "todo"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:78:in `user'
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ? AND "todos"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:23:in `destroy'
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1490)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:15:38 +0300
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:15:38 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 5385)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:15:43 +0300
+Processing by UsersController#check_login_status as */*
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:15:43 +0300
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 5383)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:16:14 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:16:14 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 5391)
+
+
+Started GET "/user/login/check" for 127.0.0.1 at 2023-03-28 20:16:22 +0300
+Processing by UsersController#check_login_status as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:16:22 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5381)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:56:04 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 5541)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-28 20:56:35 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.4ms | Allocations: 5377)
+
+
