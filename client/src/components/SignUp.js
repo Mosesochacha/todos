@@ -23,7 +23,7 @@ function SignUp({ setUser }) {
       .then((data) => {
         if (data.status === "created") {
           setUser(data.data);
-          history.push('/todos')
+          history.push('/login');
         } else {
           alert(data.message);
         }
