@@ -18,6 +18,7 @@ function App() {
       }
     });
   }, []);
+
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
     });
   }, []);
 
-  // console.log(todos);
+  console.log(todos);
 
   return (
     <>
@@ -34,26 +35,24 @@ function App() {
       <main>
         {user ? (
           <Switch>
-            <Route path="/add">
-                <AddTod/>
-            </Route>
-
             <Route exact path="/">
-              {todos.data.map((todo) => {
-                console.log(todo);
-                return (
-                  <div key={todo.id}>
-                    <Home
-                      key={todo.id}
-                      title={todo.title}
-                      priority={todo.priority}
-                      description={todo.description}
-                      status={todo.status}
-                      user={user}
-                    />
-                  </div>
-                );
-              })}
+              {todos.length > 0 &&
+                todos.map((todo) => {
+                  console.log(todo);
+                  return (
+                    <div key={todo.id}>
+                      <Home
+                        key={todo.id}
+                        title={todo.title}
+                        priority={todo.priority}
+                        description={todo.description}
+                        status={todo.status}
+                        user={user}
+                      />
+                    </div>
+                  );
+                })}
+
             </Route>
           </Switch>
         ) : (
@@ -64,7 +63,9 @@ function App() {
             <Route path="/login">
               <Login setUser={setUser} />
             </Route>
-
+            <Route path="/add">
+                <AddTod />
+              </Route>
             <Route path="/">
               <Home />
             </Route>
@@ -74,5 +75,4 @@ function App() {
     </>
   );
 }
-
 export default App;

@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
-    fetch("/users/logout", { method: "DELETE" }).then((r) => {
+    fetch("https://todosp.onrender.com/users/logout", {
+      method: "DELETE",
+    }).then((r) => {
       if (r.ok) {
         setUser(null);
       }
@@ -17,12 +19,15 @@ function NavBar({ user, setUser }) {
       </div>
       <div>
         {user ? (
-          <button onClick={handleLogoutClick}>Logout</button>
+          <div>
+            {" "}
+            <button onClick={handleLogoutClick}>Logout</button>
+            <NavLink to= "/add">AddTod</NavLink>
+          </div>
         ) : (
           <>
             <Link to="/signup">Signup</Link>
             <Link to="/login">Login</Link>
-            <Link to="/add">AddTodo</Link>
           </>
         )}
       </div>

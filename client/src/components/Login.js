@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 
 function Login({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const history = useHistory()
   function handleSubmit(e) {
     e.preventDefault();
     fetch("https://todosp.onrender.com/users/login", {
@@ -15,7 +13,6 @@ function Login({ setUser }) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-        history.push("/")
         r.json().then((user) => setUser(user));
       }
     });

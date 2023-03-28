@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-export default function AddTod(userId) {
+export default function AddTod() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
@@ -59,14 +59,14 @@ export default function AddTod(userId) {
             <label>PRIORITY</label>
             <input
               placeholder="ENTER PRIORITY"
-              type="number"
+              type="text"
               value={priority}
               onChange={(e) => setPriority(e.target.value)}
             />
 
             <label>STATUS: </label>
             <input
-              type="number"
+              type="text"
               placeholder="ENTER ANIMAL SPECIES"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
